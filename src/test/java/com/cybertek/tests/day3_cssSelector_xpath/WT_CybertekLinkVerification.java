@@ -26,7 +26,7 @@ public class WT_CybertekLinkVerification {
         driver.findElement(By.name("email")).sendKeys("minara@domain.com");
        // 4.Click on Retrieve password
         driver.findElement(By.id("form_submit")).click();
-
+        //5.Verify URL contains: Expected: “email_sent”
         String expectedInUrl = "email_sent";
         String actualUrl = driver.getCurrentUrl();
         if(actualUrl.contains(expectedInUrl)){
@@ -34,6 +34,19 @@ public class WT_CybertekLinkVerification {
         }else {
             System.out.println("URL verification FAILED");
         }
+//Verify textbox displayed the content as expected.Expected: “Your e-mail’s been sent!”
+        String actualText = driver.findElement(By.name("confirmation_message")).getText();
+
+        String expectedText = "Your e-mail's been sent!";
+        System.out.println("actualText = " + actualText);
+        System.out.println("expectedText = " + expectedText);
+        if(actualText.equalsIgnoreCase(expectedText)){
+            System.out.println("Header text value verification PASSED");
+        }else {
+            System.out.println("Header text value verification FAILED");
+
+        }
+
 
 
     }

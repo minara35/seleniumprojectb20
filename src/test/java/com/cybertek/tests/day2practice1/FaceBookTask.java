@@ -10,13 +10,17 @@ public class FaceBookTask {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.facebook.com");
-        String expectedTitle="Log into Facebook | Facebook";
+
+
        driver.findElement(By.id("email")).sendKeys("minara35@gmail.com");
         driver.findElement(By.id("pass")).sendKeys("M061717@m");
         driver.findElement(By.name("login")).click();
-    String actualTitle = driver.getTitle();
 
-       if(actualTitle.equals(expectedTitle)){
+        String actualTitle = driver.getTitle();
+        String expectedTitle="";
+        System.out.println("actualTitle = " + actualTitle);
+        System.out.println("expectedTitle = " + expectedTitle);
+        if(actualTitle.equals(expectedTitle)){
             System.out.println("Header Verification PASSED!!");
         }else{
             System.out.println("Header Verification FAILED!!");
