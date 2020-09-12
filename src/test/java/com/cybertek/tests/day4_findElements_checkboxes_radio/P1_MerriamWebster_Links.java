@@ -39,10 +39,14 @@ public class P1_MerriamWebster_Links {
 
 
         //4. Print out how many link is missing text
-
+        System.out.println("The number of links that does not have text = " + linksWithoutText);
 
         //5. Print out how many link has text
+        System.out.println("The number of links that HAS text = " + linksWithText);
+
         //6. Print out how many total link
+        System.out.println("The number of TOTAL links on this page = " + listOfLinks.size());
+
 
     }
 }
