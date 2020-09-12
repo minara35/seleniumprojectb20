@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class P1_MerriamWebster_Links {
+public class P2_MerriamWebster_Links {
     public static void main(String[] args) {
         //TC #2: FINDELEMENTS
         //1. Open Chrome browser
