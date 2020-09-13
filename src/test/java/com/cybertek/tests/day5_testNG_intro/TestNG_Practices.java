@@ -50,7 +50,10 @@ public class TestNG_Practices {
 
         Assert.assertTrue(actualTitle.contains(expectedInTitle), "Title does not contain search value.");
 
+
+
     }
+
 
 
 
