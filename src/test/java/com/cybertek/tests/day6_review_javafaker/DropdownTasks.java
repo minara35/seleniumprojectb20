@@ -130,8 +130,41 @@ public class DropdownTasks {
 
 
         //5. Deselect all values.
+
+        multipleSelectDropdown.deselectAll();
+        for(WebElement eachOption : allOptions){
+           // Assert.assertTrue(!eachOption.isSelected()); // it will be false boolean value, with ! we make it "true"
+           // assertFalse method looks fir "false" boolean value to pass the test
+            Assert.assertFalse(eachOption.isSelected());
+        }
+
     }
 
+
+    @Test
+    public void test5_html_dropdown_handling(){
+        //TC #5: Selecting value from non-select dropdown
+
+
+        //Locate the HTML dropdown as a regular web element
+        WebElement websiteDropdown = driver.findElement(By.xpath("//div[@class='dropdown']/a"));
+
+        //3. Click to non-select dropdown
+        websiteDropdown.click();
+
+        //4. Select Facebook from dropdown
+        WebElement facebookLink = driver.findElement(By.xpath("//a[.='Facebook']")); // "." its  TEXT
+
+        facebookLink.click();
+
+
+
+        //5. Verify title is “Facebook - Log In or Sign Up”
+        String actualTitle = driver.getTitle();
+        String expectedTitle = "Facebook - Log In or Sign Up";
+
+        Assert.assertEquals(actualTitle, expectedTitle, "Actual title does not match expected title!");
+    }
 
 
 
