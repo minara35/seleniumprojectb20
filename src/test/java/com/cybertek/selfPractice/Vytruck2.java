@@ -4,7 +4,7 @@ import com.cybertek.untilities.WebDriverFactory;
 import org.openqa.selenium.*;
 
 public class Vytruck2 {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, NoSuchElementException {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.get("https://qa2.vytrack.com/user/login");
         driver.manage().window().maximize();
@@ -36,11 +36,11 @@ public class Vytruck2 {
             System.out.println("Header Verification FAILED!!");
         }
 
-
+       // driver.findElement(By.xpath("//td[@class='action-cell grid-cell grid-body-cell']")).isSelected();
         //find ... click on it
-     driver.findElement(By.xpath("//a[@href='javascript:void(0);']")).click();
+        driver.findElement(By.xpath("//a[@href='javascript:void(0);']")).click();
         //driver.findElement(By.xpath("//id[@class='dropdown']")).click();
-      Thread.sleep(5000);
+      Thread.sleep(3000);
 
        //driver.findElement(By.xpath("//*[@href='javascript:void(0);']")).click();
        // driver.findElement(By.xpath("//div[@class='dropdown']")).isSelected();
@@ -50,18 +50,20 @@ public class Vytruck2 {
 
 
 
-      //driver.findElement(By.xpath("//i[@class='fa-pencil-square-o hide-text']")).click();
+     //driver.findElement(By.xpath("//i[@class='fa-pencil-square-o hide-text']")).click();
         //driver.findElement(By.xpath("//ul[@class='dropdown-menu dropdown-menu__action-cell launchers-dropdown-menu']")).getLocation();
 
 
         // find icon edit
         //driver.findElement(By.xpath("//i[@class='fa-pencil-square-o hide-text']")).isSelected();
-
-       // driver.findElement(By.partialLinkText("fa-pencil-square-o ")).click();
-        //driver.findElement(By.xpath("//a[@title='Edit']")).click();
+        //driver.findElement(By.xpath("//a[@title='Edit']"));
+        //Thread.sleep(3000);
+        //driver.findElement(By.xpath("//i[@class='fa-pencil-square-o hide-text']"));
+       // driver.findElement(By.xpath("//a[@title='Edit']")).click();
         //driver.findElement(By.xpath("//a[@href='/entity/update/Extend_Entity_Carreservation/item/1562']")).click();
 
-       Thread.sleep(3000);
+
+       //Thread.sleep(3000);
 
 
 
