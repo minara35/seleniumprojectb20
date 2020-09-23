@@ -47,8 +47,12 @@ public class Vytruck3 {
         listedVehicle.click();
         Thread.sleep(3000);
 
-       // WebElement edit = driver.findElement(By.xpath("//a[@title='Edit']"));
-        //edit.isSelected();
+        // WebElement edit = driver.findElement(By.xpath("//a[@title='Edit']"));
+      //  WebElement three = driver.findElement(By.xpath("//ul[@class='dropdown-menu dropdown-menu__action-cell launchers-dropdown-menu']"));
+       // three.click();
+        //WebElement edit = driver.findElement(By.xpath("//i[@class='fa-pencil-square-o hide-text']"));
+       // edit.click();
+
        // Thread.sleep(3000);
       /* WebElement add=driver.findElement(By.xpath("//button[@class='btn btn-medium add-btn']"));
         add.click();
@@ -64,10 +68,11 @@ public class Vytruck3 {
         Thread.sleep(3000);
         WebElement saved=driver.findElement(By.xpath("//button[@type='submit']"));
 
+
         //saved.click();
 
        */
-        driver.quit();
+       driver.quit();
     }
 
 }
