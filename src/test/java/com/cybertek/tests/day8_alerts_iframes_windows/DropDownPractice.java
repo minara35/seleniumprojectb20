@@ -29,7 +29,7 @@ public class DropDownPractice {
 
 
     @Test
-    public void p7_month_dropdown_default_value_test(){
+    public void p7_month_dropdown_default_value_test() {
         //Locating the month dropdown
         Select monthDropdown = new Select(driver.findElement(By.xpath("//select[@id='month']")));
 
@@ -56,7 +56,7 @@ public class DropDownPractice {
 
         //Creating a list of strings to store months
         List<String> expectedMonthOptions = Arrays.asList("January", "February", "March", "April", "May", "June", "July",
-                "August","September","October", "November", "December");
+                "August", "September", "October", "November", "December");
 
         //Create a new list of Strings called: actualMonthsTexts , and store the texts of web elements into this new list
 //        List<String> actualMonthsTexts = new ArrayList<>();
@@ -71,7 +71,9 @@ public class DropDownPractice {
         //Passing List into assertions:
         //First it will check the size, then it will check the content
         Assert.assertEquals(BrowserUtils.getElementsText(actualMonthOptions), expectedMonthOptions);
+
+
     }
-    }
+}
 
 
