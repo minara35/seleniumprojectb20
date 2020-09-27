@@ -57,9 +57,39 @@ public class SmartBearUtilities {
         // Assert fail method will fail the test when it is called, no matter what.
         Assert.fail("Name: " + name+ " does not exist in the list! Verification FAILED!!!");
     }
+//Practice #5: Method: printNamesAndCities
+//• Create a method named printNamesAndCities in SmartBearUtils class.
+//• Method takes WebDriver object.
+//• This method should simply print all the names in the List of All Orders.
+//• Create a new TestNG test to test if the method is working as expected.
+//• Output should be like:
+//• Name1: name , City1: city
+//• Name2: name , City2: city
 
+    public static void printNamesAndCities(WebDriver driver){
+        //locating all the names from all the rows and storing in a list of web element
+        List<WebElement> nameList = driver.findElements(By.xpath("//table[@id='ctl00_MainContent_orderGrid']//tr/td[2]"));
+        List<WebElement> citiesList = driver.findElements(By.xpath("//table[@id='ctl00_MainContent_orderGrid']//tr/td[7]"));
+
+
+        for(int i =0; i < nameList.size(); i++){
+            System.out.println("Name"+ (i+1) +": " + nameList.get(i).getText() + ", City"+ (i+1) +": " + citiesList.get(i).getText());
+
+        }
 
     }
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
 

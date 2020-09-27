@@ -29,4 +29,11 @@ public class WebTablePractices {
 
     }
 
+    //Using the printNameAndCities  method to print all names and their cities
+    @Test
+    public void task5_print_names_and_cities(){
+        SmartBearUtilities.printNamesAndCities(driver);
+
+    }
+
 }
