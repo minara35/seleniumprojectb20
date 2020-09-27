@@ -1,14 +1,18 @@
 package com.cybertek.tests.day8_alerts_iframes_windows;
 
+import com.cybertek.untilities.BrowserUtils;
 import com.cybertek.untilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class DropDownPractice {
@@ -30,12 +34,13 @@ public class DropDownPractice {
         Select monthDropdown = new Select(driver.findElement(By.xpath("//select[@id='month']")));
 
         //Expected
+        //We are dynamically getting the current month name from LocalDateTime java class.
         String expectedValue = LocalDateTime.now().getMonth().name();
-        System.out.println("expectedValue = " + expectedValue);
+        //System.out.println("expectedValue = " + expectedValue);
 
         //Actual
         String actualValue = monthDropdown.getFirstSelectedOption().getText();
-        System.out.println("actualValue = " + actualValue);
+        //System.out.println("actualValue = " + actualValue);
 
         //Assert
         //First way of doing this assertion: use .toLowerCase() method for both actual and expected values
@@ -43,6 +48,30 @@ public class DropDownPractice {
 
         //Second way: use equalsIgnoreCase to compare actual and expected values
         Assert.assertTrue(actualValue.equalsIgnoreCase(expectedValue));
+
+        //TASK8:
+
+        //This line gets all of the options from the dropdown and store the value in a list
+        List<WebElement> actualMonthOptions = monthDropdown.getOptions();
+
+        //Creating a list of strings to store months
+        List<String> expectedMonthOptions = Arrays.asList("January", "February", "March", "April", "May", "June", "July",
+                "August","September","October", "November", "December");
+
+        //Create a new list of Strings called: actualMonthsTexts , and store the texts of web elements into this new list
+//        List<String> actualMonthsTexts = new ArrayList<>();
+//
+//        for (WebElement each : actualMonthOptions) {
+//
+//            actualMonthsTexts.add(each.getText());
+//
+//        }
+
+
+        //Passing List into assertions:
+        //First it will check the size, then it will check the content
+        Assert.assertEquals(BrowserUtils.getElementsText(actualMonthOptions), expectedMonthOptions);
+    }
     }
 
-}
+
