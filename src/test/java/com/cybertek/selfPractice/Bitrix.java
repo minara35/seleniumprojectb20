@@ -14,14 +14,16 @@ public class Bitrix {
     @BeforeMethod
     public void Set() {
         driver = WebDriverFactory.getDriver("chrome");
-       // driver.manage().window().maximize();​
+      // driver.manage().window().maximize();​
         driver.get("https://login2.nextbasecrm.com/stream/");
+        BrowserUtils.wait(4);
         driver.findElement(By.xpath("//input[@type='text']")).sendKeys("helpdesk15@cybertekschool.com");
         driver.findElement(By.xpath("//input[@type='password']")).sendKeys("UserUser" + Keys.ENTER);
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(4);
 
 
         driver.findElement(By.xpath("//span[@class='feed-add-post-form-link feed-add-post-form-link-active']")).click();
+        BrowserUtils.wait(4);
     }
 /*
     @Test
@@ -44,13 +46,14 @@ public class Bitrix {
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
+
 //Find frame or iframe and switch
         //  wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("bx-editor-iframe"));
 
 //Now find the element Record video
         WebElement warningAlertButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class='feed-add-post-form-but-cnt feed-add-videomessage'])[1]")));
         warningAlertButton.click();
-
+        BrowserUtils.wait(4);
        driver.findElement(By.xpath("//span[@class='popup-window-button popup-window-button-blue']")).click();
       // BrowserUtils.wait(6);
 
@@ -101,7 +104,7 @@ public class Bitrix {
 
         //assert "resultText" is displayed
         // Assert.assertTrue(resultText.isDisplayed(), "Result text is not displayed. Verification failed!!!");
-
+        BrowserUtils.wait(4);
 
     }
 

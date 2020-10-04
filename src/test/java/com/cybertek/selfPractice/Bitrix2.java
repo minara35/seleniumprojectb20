@@ -17,11 +17,15 @@ public class Bitrix2 {
     @BeforeMethod
     public void Set() {
         driver = WebDriverFactory.getDriver("chrome");
-       // driver.manage().window().maximize();​
+
         driver.get("https://login2.nextbasecrm.com/stream/");
+
+        BrowserUtils.wait(4);
         driver.findElement(By.xpath("//input[@type='text']")).sendKeys("helpdesk15@cybertekschool.com");
         driver.findElement(By.xpath("//input[@type='password']")).sendKeys("UserUser" + Keys.ENTER);
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(4);
+
+        //click on message module
         driver.findElement(By.xpath("//span[@class='feed-add-post-form-link feed-add-post-form-link-active']")).click();
     }
 /*
@@ -43,6 +47,7 @@ public class Bitrix2 {
         //  By.xpath("//span[contains(@class,'v-menubar-menuitem-caption') and contains(text(), 'Actions')]"));
         //actionBtn.click();
 
+        //click on video icon
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
 //Find frame or iframe and switch
@@ -56,9 +61,12 @@ public class Bitrix2 {
 
 
         BrowserUtils.wait(6);
-
+        //locating URL
        WebElement el = driver.findElement(By.xpath("//input[@id='video_idPostFormLHE_blogPostForm-source']"));
        el.sendKeys("https://www.youtube.com/watch?v=b4qMka1WJIs");
+        BrowserUtils.wait(4);
+
+        //save  button
 
        driver.findElement(By.xpath("//input[@value='Save']")).click();
 

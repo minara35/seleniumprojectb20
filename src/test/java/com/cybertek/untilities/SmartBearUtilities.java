@@ -78,7 +78,23 @@ public class SmartBearUtilities {
         }
 
     }
+//Create a method called removeName()
+//1. Accepts two parameters: WebDriver, String name
+//2. Method will remove the given name from the list of Smartbear
+//3. Create a new TestNG test, and call your method.
+//4. Assert that your method removed the given name
 
+
+    public static void removeName(WebDriver driver, String name){
+        List<WebElement> nameList = driver.findElements(By.xpath("//table[@id='ctl00_MainContent_orderGrid']//tr/td[2]"));
+
+
+
+        for(int i =0; i < nameList.size(); i++){
+            System.out.println("Name"+ (i+1) +": " + nameList.get(i).getText());
+
+    }
+    }
 
 }
 
