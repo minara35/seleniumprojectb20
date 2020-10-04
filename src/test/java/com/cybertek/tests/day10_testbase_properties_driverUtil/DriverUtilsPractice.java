@@ -7,9 +7,10 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-public class DriverUtilsPractice {
-@Test
-public void simple_google_search_test(){
+
+    public class DriverUtilsPractice {
+    @Test
+    public void simple_google_search_test(){
         //Driver.getDriver() = driver
         //From now on we will call the driver --> Driver.getDriver();
         Driver.getDriver().get("https://google.com");
@@ -27,6 +28,6 @@ public void simple_google_search_test(){
 
         Assert.assertTrue(actualTitle.contains(expectedInTitle));
 
-        }
+    }
 
-        }
+}

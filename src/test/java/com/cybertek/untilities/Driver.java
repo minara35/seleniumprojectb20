@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Driver {
+
     private Driver(){}
 
     private static WebDriver driver;
@@ -35,4 +36,7 @@ public class Driver {
             driver = null;
         }
     }
+
+
+
 }

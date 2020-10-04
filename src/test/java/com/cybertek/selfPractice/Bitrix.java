@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
@@ -62,14 +61,14 @@ public class Bitrix {
 
 
       WebElement n =driver.findElement(By.xpath("//body[@class='template-bitrix24 no-paddings start-page bitrix24-light-theme bx-videomessage-lock-scroll']"));
-        WebElement q =driver.findElement(By.xpath("//div[@class='bx-videomessage-video-close']"));
+   //     WebElement q =driver.findElement(By.xpath("//div[@class='bx-videomessage-video-close']"));
 n.click();
         BrowserUtils.wait(2);
-q.click();
+//q.click();
 
 
 
-        new Actions(driver).sendKeys(Keys.ESCAPE).build().perform(); // Dismiss "notifications" dialog box.
+      //  new Actions(driver).sendKeys(Keys.ESCAPE).build().perform(); // Dismiss "notifications" dialog box.
 
 
         //driver.findElement(By.xpath("//span[@class='popup-window-button popup-window-button-blue']")).click();

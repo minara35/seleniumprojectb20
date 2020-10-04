@@ -52,7 +52,7 @@ public class Bitrix3 {
 
   quote.click();
 
-       wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@class='bxhtmled-search-inp']")))).sendKeys("hi");
+     //  wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@class='bxhtmled-search-inp']")))).sendKeys("hi");
        // driver.findElement(By.xpath("//blockquote[@class='bxhtmled-quote']")).clear();
 
 

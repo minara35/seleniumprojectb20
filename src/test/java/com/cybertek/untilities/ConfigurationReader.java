@@ -12,8 +12,8 @@ public class ConfigurationReader {
     //#4- We read from file
     //#5- close the file
 //#1- We created the properties object
+    //#1- We created the properties object
     private static Properties properties = new Properties();
-
 
     static {
         try {
@@ -28,13 +28,9 @@ public class ConfigurationReader {
             System.out.println("Properties file not found.");
         }
     }
-    //#4- We read from file
-
+    //#4- We read from file: we will be creating a utility method for reading.
     public static String getProperty(String keyWord){
+
         return properties.getProperty(keyWord);
     }
-
-
-
-
 }
