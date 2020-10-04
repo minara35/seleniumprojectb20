@@ -2,7 +2,11 @@ package com.cybertek.selfPractice;
 
 import com.cybertek.untilities.BrowserUtils;
 import com.cybertek.untilities.WebDriverFactory;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
@@ -55,22 +59,27 @@ public class Bitrix {
         warningAlertButton.click();
         BrowserUtils.wait(4);
        driver.findElement(By.xpath("//span[@class='popup-window-button popup-window-button-blue']")).click();
-      // BrowserUtils.wait(6);
 
-      // Alert alert = driver.switchTo().alert();
 
-      // alert.accept();
+      WebElement n =driver.findElement(By.xpath("//body[@class='template-bitrix24 no-paddings start-page bitrix24-light-theme bx-videomessage-lock-scroll']"));
+        WebElement q =driver.findElement(By.xpath("//div[@class='bx-videomessage-video-close']"));
+n.click();
+        BrowserUtils.wait(2);
+q.click();
 
-      //  BrowserUtils.wait(2);
+
+
+        new Actions(driver).sendKeys(Keys.ESCAPE).build().perform(); // Dismiss "notifications" dialog box.
 
 
         //driver.findElement(By.xpath("//span[@class='popup-window-button popup-window-button-blue']")).click();
 
-     // driver.switchTo().alert().accept();
+     //
 
 
       // Switching to Alert
-      //  Alert alert = driver.switchTo().alert();
+
+
 
         // Capturing alert message.
 

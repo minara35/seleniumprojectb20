@@ -2,7 +2,10 @@ package com.cybertek.selfPractice;
 
 import com.cybertek.untilities.BrowserUtils;
 import com.cybertek.untilities.WebDriverFactory;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
@@ -45,11 +48,15 @@ public class Bitrix3 {
         WebDriverWait wait = new WebDriverWait(driver, 3);
         //WebElement quote = wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//div[@class='feed-add-post-form-but-wrap']/span[4]"))));
 
-        WebElement quote = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(" //span[@title='Quote text']"))));
+     WebElement quote = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//span[@title='Quote text']/i"))));
 
-       quote.click();
+  quote.click();
 
-    quote.sendKeys("hello");
+       wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@class='bxhtmled-search-inp']")))).sendKeys("hi");
+       // driver.findElement(By.xpath("//blockquote[@class='bxhtmled-quote']")).clear();
+
+
+
 
 
      //  Actions action = new Actions(driver);
