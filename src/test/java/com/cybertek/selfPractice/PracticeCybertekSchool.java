@@ -95,6 +95,7 @@ public class PracticeCybertekSchool {
        Alert alert = Driver.getDriver().switchTo().alert();
        alert.accept();
 
+
     }
 
 
