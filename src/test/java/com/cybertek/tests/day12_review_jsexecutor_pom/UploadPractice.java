@@ -19,7 +19,7 @@ public class UploadPractice {
 
         //Windows: Right click -> properties -> copy from location
         //OR SHIFT + RIGHT CLICK --> Copy as path
-        String path = "/Users/cybertekchicago-1/Desktop/warface.jpg";
+        String path = "/Users/minara/Downloads/image (1).png";
         ///Users/cybertekchicago-1/Desktop/warface.jpg
         //String windowsPath = "C:\\Users\\direc\\Desktop\\Sample.xlsx";
 
