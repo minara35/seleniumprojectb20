@@ -1,29 +1,24 @@
 package com.cybertek.pages;
-/*
-We store all the web elements and methods related to LoginPage in this .java class.
- */
 
 import com.cybertek.untilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
-
-    public LoginPage(){
+public class LoginPage_Vytrack {
+    public LoginPage_Vytrack(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
-
-    @FindBy(id = "ctl00_MainContent_username")
+    @FindBy(id = "prependedInput")
     public WebElement usernameInput;
 
-    @FindBy(id = "ctl00_MainContent_password")
+    @FindBy(id = "prependedInput2")
     public WebElement passwordInput;
 
-    @FindBy(id = "ctl00_MainContent_login_button")
+    @FindBy(id = "_submit")
     public WebElement loginButton;
 
-    @FindBy(id = "ctl00_MainContent_status")
+    @FindBy(className = "alert alert-error")
     public WebElement errorMessage;
 
     public void login(String username, String password){
@@ -31,6 +26,4 @@ public class LoginPage {
         passwordInput.sendKeys(password);
         loginButton.click();
     }
-
-
 }

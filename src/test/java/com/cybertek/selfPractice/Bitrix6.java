@@ -27,7 +27,7 @@ public class Bitrix6 {
     public void test_Us1_AC6(){
         /*(Given) Help Desk user located at Active Stream
         and click on “Add comment” box
-        (When) Click on the “Add mention” icon, select an exployee/s or departament, write a text and click on “SEND” Button.
+        (When) Click on the “Add mention” icon, select an employee/s or departament, write a text and click on “SEND” Button.
         (Then) User should be able to send a mention in the Activity Stream chat.
         */
 

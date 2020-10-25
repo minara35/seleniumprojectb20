@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Bitrix_AC6 {
@@ -41,13 +40,37 @@ public class Bitrix_AC6 {
         addMentionIcon.click();
 
         BrowserUtils.wait(5);
-        List<WebElement> allNames = driver.findElements(By.xpath("//span[@class='bx-finder-groupbox-content']/a"));
-        for (WebElement eachName : allNames) {
+      //  List<WebElement> allNames = driver.findElements(By.xpath("//span[@class='bx-finder-groupbox-content']/a"));
+     //   for (WebElement eachName : allNames) {
           //  System.out.println("eachName = " + eachName.getText());
 
-        eachName.isSelected();
+      //  eachName.click();
+
+        WebElement selectEmail = driver.findElement(By.xpath("(//div[@class='bx-finder-box-item-t7-name'])[1]"));
+        selectEmail.click();
+
+        //It gets access to the iframe
+        WebElement iframeMention = driver.findElement(By.xpath("//iframe[@class='bx-editor-iframe']"));
+        driver.switchTo().frame(iframeMention);
+
+        //It types a message in the iframe message area
+        WebElement mentionText = driver.findElement(By.xpath("//span[@class='bxhtmled-metion']"));
+        mentionText.sendKeys("Ignore this message, it is a TEST");
+
+        //It switch back to the parent Frame
+        driver.switchTo().parentFrame();
+
+        BrowserUtils.wait(2);
+        //It clicks the send button
+        WebElement sendButton = driver.findElement(By.xpath("(//button[@class='ui-btn ui-btn-lg ui-btn-primary'])[1]"));
+        sendButton.click();
+
+
+
 
         }
+        /*
+
         //It select the dropDown menu with the Employee list of contacts
         WebElement destDepartmentTab = driver.findElement(By.partialLinkText("Employees and departments"));
         destDepartmentTab.click();
@@ -76,6 +99,7 @@ public class Bitrix_AC6 {
 
 
 
+         */
+
 
     }
-}
